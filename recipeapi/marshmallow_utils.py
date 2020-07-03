@@ -4,6 +4,6 @@ def convert_errors_to_sentence(marshmallow_errors):
         errors += str(k)
         errors += ': '
         for error in v:
-            errors += error
+            errors += str(error)
             errors += ' '
     return errors
