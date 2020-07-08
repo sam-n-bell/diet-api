@@ -14,6 +14,7 @@ class RecipeSchema(Schema):
     est_completion_time_hrs = fields.Float(required=True, validate=Range(min=0.0))
     min_serving_size = fields.Integer(required=True, validate=Range(min=1))
     max_serving_size = fields.Integer(required=False, validate=Range(min=1))
+    user_id = fields.Str()
 
 
 def validate_recipe_post(recipe_body):

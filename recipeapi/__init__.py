@@ -53,4 +53,8 @@ def create_app(config=ProductionConfig):
     def internal_system_error(e):
         return jsonify(message=e.description), 500
 
+    @app.errorhandler(Exception)
+    def exception_handler(e):
+        return jsonify(message="An unexpected error occurred"), 500
+
     return app
