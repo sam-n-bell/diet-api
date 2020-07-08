@@ -28,8 +28,10 @@ def create_app(config=ProductionConfig):
 
     from recipeapi.users.routes import users
     from recipeapi.recipes.routes import recipes
+    from recipeapi.recipereviews.routes import recipe_reviews
     app.register_blueprint(users, url_prefix=prefix)
     app.register_blueprint(recipes, url_prefix=prefix)
+    app.register_blueprint(recipe_reviews, url_prefix=prefix)
 
     @app.route('/', methods=['GET'])
     def return_index():
