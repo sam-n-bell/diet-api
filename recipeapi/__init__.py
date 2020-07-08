@@ -55,6 +55,6 @@ def create_app(config=ProductionConfig):
 
     @app.errorhandler(Exception)
     def exception_handler(e):
-        return jsonify(message="An unexpected error occurred " + e.description), 500
+        return jsonify(message="An unexpected error occurred " + str(e)), 500
 
     return app
