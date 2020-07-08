@@ -42,7 +42,7 @@ def login():
     save_new_user_jwt(jwt, user.get('user_id'))
     domain = os.getenv("COOKIE_DOMAIN")
     resp = make_response()
-    resp.set_cookie(key="DIET-API-COOKIE", value=jwt, domain=domain)
+    resp.set_cookie(key="RECIPE-API-COOKIE", value=jwt, domain=domain)
 
     return resp
 
