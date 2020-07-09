@@ -7,6 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_migrate import Migrate
 from flask_jwt_extended import JWTManager
+from flask_cors import CORS
 load_dotenv()
 
 db = SQLAlchemy()
@@ -17,6 +18,7 @@ jwt = JWTManager()
 
 def create_app(config=ProductionConfig):
     app = Flask(__name__)
+    CORS(app)
     app.config.from_object(config)
     prefix = os.getenv("URL_PREFIX")
 
